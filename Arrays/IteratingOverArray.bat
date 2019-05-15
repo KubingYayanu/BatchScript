@@ -8,6 +8,7 @@ set topic[4]=Time and date
 set topic[5]=Operators 
 
 ::for /l %%parameter in (start,step,end) do command
+::/l: Denotes that the for command will operate in a numerical fashion, rather than operating on a set of files
 ::start: The first number
 ::step: The amount by which to increment the sequence
 ::end: The last number
