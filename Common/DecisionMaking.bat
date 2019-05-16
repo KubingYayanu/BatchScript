@@ -41,3 +41,32 @@ echo ----------------------------------------------------------
 
 :: if exist file.ext command
 if exist C:\set3.txt (echo "File exists") else (echo "File does not exist")
+
+echo ----------------------------------------------------------
+
+:: if errorlevel n command
+:: "if errorlevel", which is used to test the exit codes of the last command that was run. 
+:: Various commands issue integer exit codes to denote the status of the command. 
+:: Generally, commands pass 0 if the command was completed successfully and 1 if the command failed.
+
+if errorlevel 1 (
+    echo %date% %time% - Command Failed.
+)
+if errorlevel 0 (
+    echo %date% %time% - Command Successfully.
+)
+
+echo ----------------------------------------------------------
+
+SET /A a=5 
+
+if %a%==5 goto :labela 
+if %a%==10 goto :labelb
+
+:labela 
+echo "The value of a is 5" 
+
+exit /b 0
+
+:labelb 
+echo "The value of a is 10"
